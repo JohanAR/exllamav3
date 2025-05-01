@@ -10,7 +10,12 @@ from .pagetable import PageTable
 from .job import Job
 from concurrent.futures import ThreadPoolExecutor
 from .sampler import Sampler, GumbelSampler
-from .visualizer import CacheVisualizer
+
+try:
+    from .visualizer import CacheVisualizer
+except:
+    CacheVisualizer = None
+
 import time
 import threading
 import numpy as np
